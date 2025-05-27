@@ -2,6 +2,7 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Logo from '../assets/img/logo_light.png'
+import { Link } from 'expo-router'
 
 const Home = () => {
   return (
@@ -9,7 +10,10 @@ const Home = () => {
         <Image source={Logo} style={styles.logo} />
       <Text style={[styles.title, {color: 'green'}]}>Home</Text>
       <Text style={{color: 'red', marginTop: 10, marginBottom: 20}}>This looks like a flexbox </Text>
+      <Link href="/about" style={styles.link}>About Page  </Link>
+      <Link href="/contact" style={styles.link}>Contact Page 📇 </Link>
     </View>
+
   )
 }
 
@@ -32,4 +36,9 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 18,
     },
+    link: {
+        marginVertical: 10,
+        color: 'blue',
+        borderBottomWidth: 2
+    }
 })

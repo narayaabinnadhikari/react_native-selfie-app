@@ -1,0 +1,1 @@
+Just a practice project using Expo(React-native) for an android app.

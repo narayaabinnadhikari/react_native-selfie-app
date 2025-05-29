@@ -1,18 +1,35 @@
 //rnfes
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text} from 'react-native'
 import React from 'react'
 import Logo from '../assets/img/logo_light.png'
 import { Link } from 'expo-router'
+import ThemedView from '../components/ThemedView'
+import ThemedLogo from '../components/ThemedLogo'
+import Spacer from '../components/Spacer'
+import ThemedText from '../components/ThemedText'
 
 const Home = () => {
   return (
-    <View style={styles.container}>
-        <Image source={Logo} style={styles.logo} />
-      <Text style={[styles.title, {color: 'green'}]}>Home</Text>
-      <Text style={{color: 'red', marginTop: 10, marginBottom: 20}}>This looks like a flexbox </Text>
-      <Link href="/about" style={styles.link}>About Page  </Link>
-      <Link href="/contact" style={styles.link}>Contact Page 📇 </Link>
-    </View>
+    <ThemedView style={styles.container}>
+        <ThemedLogo />
+        <Spacer height={20} />
+        <ThemedText style={styles.title} title={true}>
+          The Best App
+        </ThemedText >
+        <Spacer height={15} />
+        <ThemedText>This looks like a flexbox </ThemedText>
+        <Spacer />
+        <Link href="/about" style={styles.link}>
+        <ThemedText>
+          About Page  
+        </ThemedText>
+        </Link>
+        <Link href="/contact" style={styles.link}>
+        <ThemedText>
+          Contact Page  
+        </ThemedText> 
+        </Link>
+    </ThemedView>
 
   )
 }
@@ -25,20 +42,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    logo: {
-        marginVertical: 20,
-        borderColor: 'maroon',
-        borderWidth: 5,
-        borderRadius: 10
-
-    },
     title: {
         fontWeight: 'bold',
         fontSize: 18,
     },
     link: {
         marginVertical: 10,
-        color: 'blue',
         borderBottomWidth: 2
     }
 })
